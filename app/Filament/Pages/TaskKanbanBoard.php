@@ -17,4 +17,20 @@ class TaskKanbanBoard extends KanbanBoard
     {
         return TaskStatus::statuses();
     }
+
+    protected function records(): Collection
+    {
+        return Task::ordered()->get();
+    }
+
+    public function onStatusChanged(int|string $recordId, string $status, array $fromOrderedIds, array $toOrderedIds): void
+    {
+        Task::find($recordId)->update(['status' => $status]);
+        Task::setNewOrder($toOrderedIds);
+    }
+
+    public function onSortChanged(int|string $recordId, string $status, array $orderedIds): void
+    {
+        Task::setNewOrder($orderedIds);
+    }
 }
