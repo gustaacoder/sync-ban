@@ -10,6 +10,10 @@ enum TaskStatus: string
     case InProgress = 'in_progress';
     case Completed = 'completed';
 
+    public const PENDING = 'pending';
+    public const INPROGRESS = 'in_progress';
+    public const COMPLETED = 'completed';
+
     public static function statuses(): Collection
     {
         return collect([
@@ -17,5 +21,14 @@ enum TaskStatus: string
             ["id" => self::InProgress, "title" => __('In Progress')],
             ["id" => self::Completed, "title" => __('Completed')],
         ]);
+    }
+
+    public static function getLabels(): ?array
+    {
+        return [
+            self::PENDING => __('Pending'),
+            self::INPROGRESS => __('In Progress'),
+            self::COMPLETED => __('Completed'),
+        ];
     }
 }

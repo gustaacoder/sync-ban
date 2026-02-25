@@ -1,5 +1,17 @@
 {
     "Pending": "Pendente",
     "In Progress": "Em Progresso",
-    "Completed": "Completo"
+    "Completed": "Completo",
+    "Title": "Título",
+    "Task": "Tarefa",
+    "Responsible": "Responsáveis",
+    "Description": "Descrição",
+    "Due Date": "Data de Vencimento",
+    "Priority": "Prioridade",
+    "Low": "Baixa",
+    "Medium": "Média",
+    "High": "Alta",
+    "Edit Task": "Editar Tarefa",
+    "Save": "Salvar",
+    "Cancel": "Cancelar"
 }
